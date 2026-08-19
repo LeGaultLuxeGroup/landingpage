@@ -1527,7 +1527,7 @@
     <li><a href="#sellers">Sellers</a></li>
     <li><a href="#buyers">Buyers</a></li>
     <li><a href="#tools">Tools</a></li>
-    <li><a href="#about">About</a></li>
+    <li><a href="https://legault.kw.com/about" target="_blank" rel="noopener">About</a></li>
     <li><a href="#reviews">Reviews</a></li>
     <li><a href="#press">Press</a></li>
     <li><a href="/blog.html">Blog</a></li>
@@ -1614,7 +1614,7 @@
     <a href="#contact" class="quick-item"><span class="qi-icon">💬</span> Contact Amanda</a>
     <a href="#reviews" class="quick-item"><span class="qi-icon">⭐</span> Client Reviews</a>
     <a href="#press" class="quick-item"><span class="qi-icon">📰</span> Press</a>
-    <a href="#about" class="quick-item"><span class="qi-icon">🌊</span> About Amanda</a>
+    <a href="https://legault.kw.com/about" class="quick-item" target="_blank" rel="noopener"><span class="qi-icon">🌊</span> About Amanda</a>
     <!-- Set 2 — exact duplicate for seamless loop -->
     <a href="#sellers" class="quick-item"><span class="qi-icon">📋</span> Seller Resources</a>
     <a href="#buyers" class="quick-item"><span class="qi-icon">🏠</span> Buyer Resources</a>
@@ -1626,7 +1626,7 @@
     <a href="#contact" class="quick-item"><span class="qi-icon">💬</span> Contact Amanda</a>
     <a href="#reviews" class="quick-item"><span class="qi-icon">⭐</span> Client Reviews</a>
     <a href="#press" class="quick-item"><span class="qi-icon">📰</span> Press</a>
-    <a href="#about" class="quick-item"><span class="qi-icon">🌊</span> About Amanda</a>
+    <a href="https://legault.kw.com/about" class="quick-item" target="_blank" rel="noopener"><span class="qi-icon">🌊</span> About Amanda</a>
   </div>
 </div>
 
@@ -2624,5 +2624,18 @@
   window.widgetTracker("send", "pageview");
   </script>
   <!-- end Widget Tracker Code -->
-  </body>
+  <script>
+(function(){
+  function smoothScrollToHash(){
+    if (!location.hash) return;
+    var target = document.querySelector(location.hash);
+    if (target) {
+      setTimeout(function(){ target.scrollIntoView({behavior:'smooth', block:'start'}); }, 60);
+    }
+  }
+  if (document.readyState === 'complete') smoothScrollToHash();
+  else window.addEventListener('load', smoothScrollToHash);
+})();
+</script>
+</body>
 </html>
