@@ -2719,6 +2719,22 @@
   }
   if (document.readyState === 'complete') smoothScrollToHash();
   else window.addEventListener('load', smoothScrollToHash);
+
+  document.addEventListener('click', function(e){
+    var a = e.target.closest('a[href^="#"], a[href^="/#"]');
+    if (!a) return;
+    var href = a.getAttribute('href');
+    var hashIdx = href.indexOf('#');
+    if (hashIdx === -1) return;
+    var hash = href.slice(hashIdx);
+    if (hash.length < 2) return;
+    var target = document.querySelector(hash);
+    if (!target) return;
+    e.preventDefault();
+    if (history.pushState) history.pushState(null, '', hash);
+    else location.hash = hash;
+    target.scrollIntoView({behavior:'smooth', block:'start'});
+  });
 })();
 </script>
 </body>
