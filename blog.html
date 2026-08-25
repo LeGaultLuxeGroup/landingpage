@@ -3,19 +3,18 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Blog | Gulf Coast Real Estate Insights | Amanda LeGault, LeGault Luxe Group</title>
+<title>Blog | Amanda LeGault, Gulf Coast Real Estate</title>
 
-<meta name="description" content="Real estate insights, market reports, and relocation guides for Sarasota, St. Petersburg, Bradenton, and Tampa Bay from Amanda LeGault, LeGault Luxe Group at Keller Williams on the Water, Sarasota.">
-<meta name="keywords" content="Gulf Coast real estate blog, Sarasota real estate, St Pete real estate, Florida relocation, Amanda LeGault, LeGault Luxe Group">
+<meta name="description" content="Timely commentary on Florida real estate law, legislation, and market news from Gulf Coast agent Amanda LeGault.">
+<meta name="keywords" content="Florida real estate blog, Florida real estate law, HJR 1F property tax, St Petersburg real estate news, Gulf Coast real estate commentary, Amanda LeGault">
 <meta name="author" content="Amanda LeGault">
 <meta name="robots" content="index, follow">
 <link rel="canonical" href="https://legaultluxegrouprealestate.com/blog.html">
 
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://legaultluxegrouprealestate.com/blog.html">
-<meta property="og:title" content="Blog | Gulf Coast Real Estate Insights | Amanda LeGault">
-<meta property="og:description" content="Market reports, relocation guides, and neighborhood breakdowns for Sarasota, St. Petersburg, Bradenton, and Tampa Bay.">
-<meta property="og:image" content="https://legaultluxegrouprealestate.com/amanda-navy.jpg">
+<meta property="og:title" content="Blog">
+<meta property="og:description" content="Timely commentary on Florida real estate law, legislation, and market news from Gulf Coast agent Amanda LeGault.">
 <meta property="og:locale" content="en_US">
 <meta property="og:site_name" content="LeGault Luxe Group Real Estate">
 
@@ -55,7 +54,7 @@ body {
   font-size: 16px;
 }
 
-/* ── NAV ── */
+/* -- NAV -- */
 .site-nav {
   position: sticky;
   top: 0;
@@ -116,7 +115,7 @@ body {
 }
 .nav-cta:hover { background: var(--navy); }
 
-/* ── PAGE HERO ── */
+/* -- PAGE HERO -- */
 .page-hero {
   background: linear-gradient(135deg, var(--navy-deep) 0%, var(--navy) 60%, #2a3d5c 100%);
   color: white;
@@ -146,7 +145,7 @@ body {
   line-height: 1.7;
 }
 
-/* ── POSTS GRID ── */
+/* -- POSTS GRID -- */
 .section { padding: 64px 40px; max-width: 1160px; margin: 0 auto; }
 .posts-grid {
   display: grid;
@@ -206,7 +205,7 @@ body {
   text-transform: uppercase;
 }
 
-/* ── CTA BAND ── */
+/* -- CTA BAND -- */
 .cta-band {
   background: var(--ivory);
   padding: 56px 40px;
@@ -240,7 +239,7 @@ body {
 }
 .btn-primary:hover { background: var(--navy); transform: translateY(-1px); }
 
-/* ── FOOTER ── */
+/* -- FOOTER -- */
 .site-footer {
   background: var(--navy-deep);
   color: rgba(255,255,255,0.55);
@@ -261,6 +260,48 @@ body {
 @media (max-width: 600px) {
   .posts-grid { grid-template-columns: 1fr; }
 }
+
+/* -- RESOURCES DROPDOWN -- */
+.nav-drop { position: relative; }
+.nav-drop > a .caret { font-size: 9px; margin-left: 5px; vertical-align: middle; }
+.nav-drop-menu {
+  position: absolute; top: 100%; left: 50%; transform: translateX(-50%);
+  min-width: 220px; margin-top: 14px; padding: 8px 0;
+  background: var(--warm-white);
+  border: 1px solid rgba(184,151,90,0.28);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-lg);
+  list-style: none; display: block; z-index: 200;
+  opacity: 0; visibility: hidden; transition: opacity 0.18s ease, visibility 0.18s ease;
+}
+.nav-drop-menu::before { content: ''; position: absolute; top: -14px; left: 0; right: 0; height: 14px; }
+.nav-drop:hover .nav-drop-menu, .nav-drop:focus-within .nav-drop-menu { opacity: 1; visibility: visible; }
+.nav-drop-menu li { display: block; width: 100%; }
+.nav-drop-menu a {
+  display: block; padding: 10px 20px; font-size: 12px; font-weight: 500;
+  letter-spacing: 0.06em; text-transform: uppercase; white-space: nowrap;
+  color: var(--charcoal); text-decoration: none;
+}
+.nav-drop-menu a:hover { color: var(--gold); background: var(--ivory); }
+.nav-drop-menu a.current { color: var(--gold); }
+
+/* -- CATEGORY CHIP NAV -- */
+.cat-nav {
+  max-width: 1160px; margin: 0 auto; padding: 44px 40px 0;
+  display: flex; flex-wrap: wrap; gap: 10px; justify-content: center;
+}
+.cat-nav a {
+  display: inline-block; padding: 9px 18px; border-radius: 999px;
+  border: 1px solid var(--slate-lt); background: white;
+  font-size: 12px; font-weight: 600; letter-spacing: 0.06em;
+  text-transform: uppercase; color: var(--slate);
+  text-decoration: none; transition: border-color 0.18s, color 0.18s;
+}
+.cat-nav a:hover { border-color: var(--gold); color: var(--gold); }
+.cat-nav a.current { background: var(--navy); border-color: var(--navy); color: white; }
+.cat-nav a .n { opacity: 0.5; margin-left: 6px; font-weight: 500; }
+.section.with-cat { padding-top: 34px; }
+@media (max-width: 900px) { .cat-nav { padding: 32px 20px 0; } }
 </style>
 </head>
 <body>
@@ -268,27 +309,43 @@ body {
 <nav class="site-nav">
   <a href="/" class="nav-brand">
     <span class="name">Amanda LeGault</span>
-    <span class="tagline">LeGault Luxe Group · Keller Williams</span>
+    <span class="tagline">LeGault Luxe Group &middot; Keller Williams</span>
   </a>
   <ul class="nav-links">
     <li><a href="/#sellers">Sellers</a></li>
     <li><a href="/#buyers">Buyers</a></li>
     <li><a href="/#about">About</a></li>
-    <li><a href="/blog.html" class="active">Blog</a></li>
+    <li class="nav-drop"><a href="/resources.html" class="active">Resources <span class="caret">&#9662;</span></a>
+      <ul class="nav-drop-menu">
+        <li><a href="/market-reports.html">Market Reports</a></li>
+        <li><a href="/neighborhood-guides.html">Neighborhood Guides</a></li>
+        <li><a href="/buying-selling-guides.html">Buying &amp; Selling</a></li>
+        <li><a href="/relocation-guides.html">Relocation</a></li>
+        <li><a href="/blog.html" class="current">Blog</a></li>
+      </ul>
+    </li>
     <li><a href="/faq.html">FAQ</a></li>
   </ul>
   <a href="/#contact" class="nav-cta">Let's Connect</a>
 </nav>
 
 <section class="page-hero">
-  <p class="eyebrow">Suncoast Gulf Coast: St. Pete · Tampa · Sarasota · Bradenton · Clearwater · Siesta Key</p>
+  <p class="eyebrow">Suncoast Gulf Coast: St. Pete &middot; Tampa &middot; Sarasota &middot; Bradenton &middot; Clearwater &middot; Siesta Key</p>
   <h1>Blog</h1>
-  <p>Market reports, relocation guides, and neighborhood breakdowns for Sarasota, St. Petersburg, Bradenton, and Tampa Bay — straight from Amanda's day-to-day work with buyers and sellers.</p>
+  <p>Timely notes on Florida real estate law, legislation, and news, written as things happen.</p>
 </section>
 
-<section class="section">
-  <div class="posts-grid">
+<section class="section with-cat">
+  <div class="cat-nav">
+    <a href="/resources.html">All<span class="n">8</span></a>
+    <a href="/market-reports.html">Market Reports<span class="n">1</span></a>
+    <a href="/neighborhood-guides.html">Neighborhood Guides<span class="n">3</span></a>
+    <a href="/buying-selling-guides.html">Buying &amp; Selling<span class="n">2</span></a>
+    <a href="/relocation-guides.html">Relocation<span class="n">1</span></a>
+    <a href="/blog.html" class="current">Blog<span class="n">1</span></a>
+  </div>
 
+  <div class="posts-grid">
     <a href="/florida-property-tax-reform-2026-st-petersburg-buyers-sellers.html" class="post-card">
       <div class="post-card-body">
         <span class="post-tag">Florida Real Estate Law</span>
@@ -300,91 +357,6 @@ body {
         </div>
       </div>
     </a>
-
-    <a href="/gulf-coast-market-report.html" class="post-card">
-      <div class="post-card-body">
-        <span class="post-tag">Market Report</span>
-        <h2>Gulf Coast Market Report — Mid-2026</h2>
-        <p>What's actually happening in St. Petersburg, Sarasota, Bradenton, and Tampa Bay real estate right now — inventory, pricing, insurance, and where each market is headed.</p>
-        <div class="post-meta">
-          <span>Updated July 2026</span>
-          <span class="post-read">Read More →</span>
-        </div>
-      </div>
-    </a>
-
-    <a href="/moving-to-florida-gulf-coast.html" class="post-card">
-      <div class="post-card-body">
-        <span class="post-tag">Relocation Guide</span>
-        <h2>Moving to Florida's Gulf Coast</h2>
-        <p>Everything out-of-state buyers need to know — tax advantages, insurance realities, which city fits your lifestyle, and how to buy from anywhere in the country.</p>
-        <div class="post-meta">
-          <span>Updated July 2026</span>
-          <span class="post-read">Read More →</span>
-        </div>
-      </div>
-    </a>
-
-    <a href="/best-neighborhoods-st-pete.html" class="post-card">
-      <div class="post-card-body">
-        <span class="post-tag">Neighborhood Guide</span>
-        <h2>The Best Neighborhoods in St. Petersburg, FL</h2>
-        <p>An insider breakdown of where to live on the Pinellas Peninsula — by price, lifestyle, and what makes each neighborhood worth knowing.</p>
-        <div class="post-meta">
-          <span>Updated July 2026</span>
-          <span class="post-read">Read More →</span>
-        </div>
-      </div>
-    </a>
-
-    <a href="/historic-kenwood-real-estate.html" class="post-card">
-      <div class="post-card-body">
-        <span class="post-tag">Market Trends</span>
-        <h2>How Historic Kenwood Became St. Pete's Hottest Market</h2>
-        <p>Craftsman bungalows, the Grand Central arts corridor, and tightly constrained supply have pushed Kenwood's median sale price to around $600,000.</p>
-        <div class="post-meta">
-          <span>Posted August 2026</span>
-          <span class="post-read">Read More →</span>
-        </div>
-      </div>
-    </a>
-
-    <a href="/cost-to-sell-home-tampa-bay.html" class="post-card">
-      <div class="post-card-body">
-        <span class="post-tag">Seller Guide</span>
-        <h2>What Does It Cost to Sell a Home in Tampa Bay?</h2>
-        <p>A line-by-line look at what Tampa Bay sellers really pay in 2026: commission after the NAR settlement changes, doc stamps, title insurance, estoppel fees, and a worked example.</p>
-        <div class="post-meta">
-          <span>Posted August 2026</span>
-          <span class="post-read">Read More &rarr;</span>
-        </div>
-      </div>
-    </a>
-
-    <a href="/florida-gulf-coast-flood-wind-insurance.html" class="post-card">
-      <div class="post-card-body">
-        <span class="post-tag">Insurance Guide</span>
-        <h2>Flood and Wind Insurance on Florida's Gulf Coast</h2>
-        <p>A practitioner's guide to what flood and wind coverage costs on the Sarasota, Manatee, and Pinellas coast in 2026, with illustrative ranges and the documents to request before you write an offer.</p>
-        <div class="post-meta">
-          <span>Posted August 2026</span>
-          <span class="post-read">Read More &rarr;</span>
-        </div>
-      </div>
-    </a>
-
-    <a href="/snell-isle-luxury-homes-guide.html" class="post-card">
-      <div class="post-card-body">
-        <span class="post-tag">Luxury Market</span>
-        <h2>Snell Isle Luxury Homes: A Buyer's Guide</h2>
-        <p>Median prices, days on market, and why waterfront, canal, golf, and interior lots behave like four separate markets, plus the 49 percent rule every renovation buyer needs to understand.</p>
-        <div class="post-meta">
-          <span>Posted August 2026</span>
-          <span class="post-read">Read More &rarr;</span>
-        </div>
-      </div>
-    </a>
-
   </div>
 </section>
 
@@ -395,10 +367,10 @@ body {
 </section>
 
 <footer class="site-footer">
-  Amanda LeGault · LeGault Luxe Group · Keller Williams on the Water, Sarasota<br>
-  FL License #SL3506757 · <a href="tel:+18478991991">(847) 899-1991</a> · <a href="mailto:amanda@legaultluxegroup.com">amanda@legaultluxegroup.com</a><br>
-  <a href="/">legaultluxegrouprealestate.com</a> · <a href="/faq.html">FAQ</a> · <a href="/best-neighborhoods-st-pete.html">St. Pete Neighborhood Guide</a> · <a href="/gulf-coast-market-report.html">Market Report</a> · <a href="/moving-to-florida-gulf-coast.html">Relocation Guide</a> · <a href="/historic-kenwood-real-estate.html">Historic Kenwood</a><br>
-  © 2026 Amanda LeGault · LeGault Luxe Group · All Rights Reserved
+  Amanda LeGault &middot; LeGault Luxe Group &middot; Keller Williams on the Water, Sarasota<br>
+  FL License #SL3506757 &middot; <a href="tel:+18478991991">(847) 899-1991</a> &middot; <a href="mailto:amanda@legaultluxegroup.com">amanda@legaultluxegroup.com</a><br>
+  <a href="/">legaultluxegrouprealestate.com</a> &middot; <a href="/faq.html">FAQ</a> &middot; <a href="/resources.html">Insights &amp; Guides</a> &middot; <a href="/market-reports.html">Market Reports</a> &middot; <a href="/neighborhood-guides.html">Neighborhood Guides</a> &middot; <a href="/blog.html">Blog</a><br>
+  &copy; 2026 Amanda LeGault &middot; LeGault Luxe Group &middot; All Rights Reserved
 </footer>
 
 </body>
