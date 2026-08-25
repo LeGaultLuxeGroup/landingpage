@@ -255,6 +255,29 @@ table.data-table td:first-child { font-weight: 600; color: var(--navy); }
 @media (max-width: 600px) {
   .article-container { padding: 48px 22px 24px; }
 }
+
+/* -- RESOURCES DROPDOWN -- */
+.nav-drop { position: relative; }
+.nav-drop > a .caret { font-size: 9px; margin-left: 5px; vertical-align: middle; }
+.nav-drop-menu {
+  position: absolute; top: 100%; left: 50%; transform: translateX(-50%);
+  min-width: 220px; margin-top: 14px; padding: 8px 0;
+  background: var(--warm-white);
+  border: 1px solid rgba(184,151,90,0.28);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-lg);
+  list-style: none; display: block; z-index: 200;
+  opacity: 0; visibility: hidden; transition: opacity 0.18s ease, visibility 0.18s ease;
+}
+.nav-drop-menu::before { content: ''; position: absolute; top: -14px; left: 0; right: 0; height: 14px; }
+.nav-drop:hover .nav-drop-menu, .nav-drop:focus-within .nav-drop-menu { opacity: 1; visibility: visible; }
+.nav-drop-menu li { display: block; width: 100%; }
+.nav-drop-menu a {
+  display: block; padding: 10px 20px; font-size: 12px; font-weight: 500;
+  letter-spacing: 0.06em; text-transform: uppercase; white-space: nowrap;
+  color: var(--charcoal); text-decoration: none;
+}
+.nav-drop-menu a:hover { color: var(--gold); background: var(--ivory); }
 </style>
 </head>
 <body>
@@ -268,7 +291,15 @@ table.data-table td:first-child { font-weight: 600; color: var(--navy); }
     <li><a href="/#sellers">Sellers</a></li>
     <li><a href="/#buyers">Buyers</a></li>
     <li><a href="/#about">About</a></li>
-    <li><a href="/blog.html" class="active">Blog</a></li>
+    <li class="nav-drop"><a href="/resources.html" class="active">Resources <span class="caret">&#9662;</span></a>
+      <ul class="nav-drop-menu">
+        <li><a href="/market-reports.html">Market Reports</a></li>
+        <li><a href="/neighborhood-guides.html">Neighborhood Guides</a></li>
+        <li><a href="/buying-selling-guides.html">Buying &amp; Selling</a></li>
+        <li><a href="/relocation-guides.html">Relocation</a></li>
+        <li><a href="/blog.html">Blog</a></li>
+      </ul>
+    </li>
     <li><a href="/faq.html">FAQ</a></li>
   </ul>
   <a href="/#contact" class="nav-cta">Let's Connect</a>
@@ -394,7 +425,7 @@ table.data-table td:first-child { font-weight: 600; color: var(--navy); }
 <footer class="site-footer">
   Amanda LeGault · LeGault Luxe Group · Keller Williams on the Water, Sarasota<br>
   FL License #SL3506757 · <a href="tel:+18478991991">(847) 899-1991</a> · <a href="mailto:amanda@legaultluxegroup.com">amanda@legaultluxegroup.com</a><br>
-  <a href="/">legaultluxegrouprealestate.com</a> · <a href="/faq.html">FAQ</a> · <a href="/blog.html">Blog</a><br>
+  <a href="/">legaultluxegrouprealestate.com</a> &middot; <a href="/faq.html">FAQ</a> &middot; <a href="/resources.html">Insights &amp; Guides</a> &middot; <a href="/market-reports.html">Market Reports</a> &middot; <a href="/neighborhood-guides.html">Neighborhood Guides</a> &middot; <a href="/blog.html">Blog</a><br>
   © 2026 Amanda LeGault · LeGault Luxe Group · All Rights Reserved
 </footer>
 
