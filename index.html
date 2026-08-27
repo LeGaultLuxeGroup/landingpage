@@ -1423,11 +1423,15 @@
     .calc-row { grid-template-columns: 1fr; }
     .site-nav { padding: 14px 20px; }
     .nav-links { display: none; }
+  .hamburger { display: flex; }
+  .nav-cta { display: none; }
     .section { padding: 56px 24px; }
     .quick-strip { padding: 0; }
     .brokerage-bar { padding: 8px 20px; }
   }
   @media (max-width: 600px) {
+  .fair-housing-bar .fh-text { display: none; }
+
     .tools-grid { grid-template-columns: 1fr; }
     .footer-top { grid-template-columns: 1fr; }
     .form-row { grid-template-columns: 1fr; }
@@ -1479,6 +1483,78 @@
   color: var(--charcoal); text-decoration: none;
 }
 .nav-drop-menu a:hover { color: var(--gold); background: var(--ivory); }
+
+/* ── HAMBURGER / MOBILE NAV ── */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  cursor: pointer;
+  background: none;
+  border: none;
+  padding: 6px;
+  z-index: 300;
+  flex-shrink: 0;
+}
+.hamburger span {
+  display: block;
+  width: 24px;
+  height: 2px;
+  background: var(--navy);
+  border-radius: 2px;
+  transition: all 0.3s;
+}
+.hamburger.open span:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
+.hamburger.open span:nth-child(2) { opacity: 0; }
+.hamburger.open span:nth-child(3) { transform: rotate(-45deg) translate(5px, -5px); }
+
+.mobile-menu {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: var(--navy-deep);
+  z-index: 250;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 28px;
+  padding: 48px 32px;
+}
+.mobile-menu.open { display: flex; }
+.mobile-menu a {
+  color: rgba(255,255,255,0.85);
+  font-size: 20px;
+  font-weight: 600;
+  text-decoration: none;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-family: var(--font-display);
+  transition: color 0.2s;
+}
+.mobile-menu a:hover { color: var(--gold-lt); }
+.mobile-menu .mob-cta {
+  background: var(--gold);
+  color: white;
+  padding: 14px 32px;
+  border-radius: var(--radius);
+  font-size: 15px;
+  font-weight: 700;
+  margin-top: 12px;
+}
+.mobile-menu .mob-cta:hover { background: var(--gold-lt); }
+.mobile-close {
+  position: absolute;
+  top: 20px;
+  right: 24px;
+  background: none;
+  border: none;
+  color: rgba(255,255,255,0.7);
+  font-size: 36px;
+  cursor: pointer;
+  line-height: 1;
+}
+
 </style>
 </head>
 <body>
@@ -1494,7 +1570,7 @@
     </svg>
     Equal Housing Opportunity
   </span>
-  <span>We are pledged to the letter and spirit of U.S. policy for the achievement of equal housing opportunity throughout the nation. We encourage and support an affirmative advertising and marketing program in which there are no barriers to obtaining housing because of race, color, religion, sex, handicap, familial status, or national origin.</span>
+  <span class="fh-text">We are pledged to the letter and spirit of U.S. policy for the achievement of equal housing opportunity throughout the nation. We encourage and support an affirmative advertising and marketing program in which there are no barriers to obtaining housing because of race, color, religion, sex, handicap, familial status, or national origin.</span>
 </div>
 
 <!-- ══════════════════════════════════════════
@@ -1539,7 +1615,24 @@
     <li><a href="/faq">FAQ</a></li>
   </ul>
   <a href="#contact" class="nav-cta">Let's Connect</a>
+  <button class="hamburger" id="hamburger" aria-label="Open navigation menu">
+    <span></span><span></span><span></span>
+  </button>
 </nav>
+
+<!-- Mobile Navigation Overlay -->
+<div class="mobile-menu" id="mobileMenu" role="dialog" aria-modal="true" aria-label="Navigation menu">
+  <button class="mobile-close" id="mobileClose" aria-label="Close menu">&#215;</button>
+  <a href="#sellers" onclick="closeMobileMenu()">Sellers</a>
+  <a href="#buyers" onclick="closeMobileMenu()">Buyers</a>
+  <a href="#tools" onclick="closeMobileMenu()">Tools</a>
+  <a href="#about" onclick="closeMobileMenu()">About</a>
+  <a href="#reviews" onclick="closeMobileMenu()">Reviews</a>
+  <a href="#press" onclick="closeMobileMenu()">Press</a>
+  <a href="/resources" onclick="closeMobileMenu()">Blog</a>
+  <a href="/faq" onclick="closeMobileMenu()">FAQ</a>
+  <a href="#contact" class="mob-cta" onclick="closeMobileMenu()">Let's Connect</a>
+</div>
 
 <!-- ══════════════════════════════════════════
      HERO
@@ -2732,5 +2825,29 @@
   });
 })();
 </script>
+
+<script>
+// Mobile navigation toggle
+(function() {
+  var hamburger = document.getElementById('hamburger');
+  var mobileMenu = document.getElementById('mobileMenu');
+  var mobileClose = document.getElementById('mobileClose');
+
+  function openMenu() {
+    mobileMenu.classList.add('open');
+    hamburger.classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+  window.closeMobileMenu = function() {
+    mobileMenu.classList.remove('open');
+    hamburger.classList.remove('open');
+    document.body.style.overflow = '';
+  };
+  if (hamburger) hamburger.addEventListener('click', openMenu);
+  if (mobileClose) mobileClose.addEventListener('click', window.closeMobileMenu);
+  document.addEventListener('keydown', function(e) { if (e.key === 'Escape') window.closeMobileMenu(); });
+})();
+</script>
+
 </body>
 </html>
