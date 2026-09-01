@@ -1,10 +1,25 @@
 {
   "reports": [
     {
-      "slug": "gulf-coast-market-report",
-      "title": "Gulf Coast Market Report — Mid-2026",
-      "excerpt": "What's actually happening in St. Petersburg, Sarasota, Bradenton, and Tampa Bay real estate right now — inventory, pricing, insurance, and where each market is headed.",
-      "date": "Updated July 2026"
+      "url": "https://amanda-legault.vibes-site.com/market/32218a9b-58e3-40c2-91ef-3678fbecaced",
+      "title": "One Bradenton Buy Box, Two Very Different Waits for a Contract",
+      "excerpt": "Two nearby Bradenton ZIP codes with similar pricing showed dramatically different speeds to pending — one taking ~119 days, the other ~60. The wait, not the price, is what separates these markets right now.",
+      "date": "August 2026",
+      "area": "Bradenton"
+    },
+    {
+      "url": "https://amanda-legault.vibes-site.com/market/a241c68d-5816-4f09-8404-f2f1f5ad5761",
+      "title": "In Saint Petersburg, Sellers Are Getting Less Money, But Giving Up Less Ground",
+      "excerpt": "Median sale prices fell ~11% year-over-year to $398K, yet the sale-to-list ratio improved to 97.1% — buyers are closing the gap to asking price, not scoring discounts.",
+      "date": "August 2026",
+      "area": "St. Petersburg"
+    },
+    {
+      "url": "https://amanda-legault.vibes-site.com/market/f7385da3-2e77-404a-bfd2-a03cd5dcbee9",
+      "title": "In Myakka City, Sellers Are Winning on Price. They're Losing Ground at the Table.",
+      "excerpt": "Median sale prices climbed ~10% year-over-year to $785K, but the sale-to-list ratio dropped from 96.6% to 92%. Sellers get paid well — but they're conceding more than the price chart shows.",
+      "date": "August 2026",
+      "area": "Myakka City"
     }
   ]
 }
